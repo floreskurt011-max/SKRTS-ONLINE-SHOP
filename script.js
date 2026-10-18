@@ -163,3 +163,4 @@ function escapeHTML(value){
 $("#year").textContent = new Date().getFullYear();
 renderProducts();
 renderCart();
+
