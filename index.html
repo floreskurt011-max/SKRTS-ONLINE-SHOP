@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SKRTS — a vintage-inspired online shop">
+  <title>SKRTS — Curated Goods</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="announcement">A LITTLE OLD SOUL, A MODERN WAY TO SHOP · FREE DELIVERY OVER ₱1,500</div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="SKRTS home">SKRTS<span class="brand-dot">.</span><small>CURATED GOODS</small></a>
+    <nav aria-label="Main navigation"><a href="#products">The Collection</a><a href="#story">Our Story</a></nav>
+    <button class="cart-pill" id="cart-jump" type="button" aria-label="Go to shopping cart">
+      <span aria-hidden="true">♧</span> Bag <span class="cart-count" id="cart-count">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">THE SKRTS EDIT · EST. MMXXIV</p>
+        <h1>Timeless finds.<br><em>Modern living.</em></h1>
+        <p class="hero-description">Thoughtfully picked essentials with a little nostalgia. Discover pieces that feel like they’ve always belonged.</p>
+        <a class="primary-link" href="#products">Explore the collection <span aria-hidden="true">↗</span></a>
+        <div class="hero-footnote"><span class="small-rule"></span> CONSIDERED GOODS FOR EVERYDAY LIFE</div>
+      </div>
+      <div class="hero-art" aria-label="Vintage-inspired still life of curated goods">
+        <div class="sun-disc"></div><div class="hero-frame"></div>
+        <div class="hero-object object-one">⌚</div><div class="hero-object object-two">🎧</div><div class="hero-object object-three">👜</div>
+        <div class="hero-art-label">THE EVERYDAY<br>ARCHIVE — No. 01</div>
+        <div class="stamp">SKRTS<br><span>SELECTED</span></div>
+      </div>
+    </section>
+
+    <section class="editorial-strip">
+      <span>GOOD DESIGN, ALWAYS</span><span class="strip-star">✳</span><span>USEFUL THINGS, BEAUTIFULLY CHOSEN</span><span class="strip-star">✳</span><span>MADE FOR THE LONG RUN</span>
+    </section>
+
+    <section class="shop-section" id="products">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE COLLECTION</p><h2>Find your <em>forever favorite.</em></h2></div>
+        <p class="muted" id="product-count">Curated pieces for everyday living</p>
+      </div>
+      <div class="shop-tools">
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Search the collection..." aria-label="Search products"></label>
+        <div class="filters" id="category-filters" aria-label="Filter by category">
+          <button class="filter active" data-category="All" type="button">All pieces</button>
+          <button class="filter" data-category="Tech" type="button">Technology</button>
+          <button class="filter" data-category="Lifestyle" type="button">Lifestyle</button>
+          <button class="filter" data-category="Accessories" type="button">Accessories</button>
+          <button class="filter" data-category="Home" type="button">At home</button>
+        </div>
+      </div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="cart-section" id="cart">
+      <div class="section-heading">
+        <div><p class="eyebrow">YOUR SELECTION</p><h2>The shopping <em>bag.</em></h2></div>
+        <button class="text-button" id="clear-cart" type="button">Clear bag</button>
+      </div>
+      <div class="cart-layout">
+        <div class="cart-items" id="cart-items"><div class="empty-cart">Your bag is waiting for something lovely.</div></div>
+        <aside class="summary-card">
+          <p class="eyebrow">A QUICK RECAP</p><h3>Order summary</h3>
+          <div class="summary-line"><span>Subtotal</span><strong id="subtotal">₱0.00</strong></div>
+          <div class="summary-line"><span>Delivery</span><strong id="delivery">₱0.00</strong></div>
+          <div class="summary-line total-line"><span>Total</span><strong id="total">₱0.00</strong></div>
+          <p class="summary-note">Complimentary delivery on orders of ₱1,500 or more. Otherwise, a ₱80 delivery fee applies.</p>
+          <button class="checkout-button" id="checkout-jump" type="button">Continue to checkout <span>↗</span></button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="checkout-section" id="checkout">
+      <div class="section-heading"><div><p class="eyebrow">THE FINAL DETAIL</p><h2>Make it <em>yours.</em></h2></div></div>
+      <form class="checkout-form" id="checkout-form">
+        <div class="form-intro"><h3>Delivery & payment</h3><p>Complete your details to place a sample order.</p></div>
+        <div class="form-grid">
+          <label>Full name<input name="fullName" type="text" placeholder="Your full name" required minlength="2"></label>
+          <label>Email address<input name="email" type="email" placeholder="you@example.com" required></label>
+          <label>Contact number<input name="phone" type="tel" placeholder="09XX XXX XXXX" required minlength="7"></label>
+          <label>Payment method
+            <select name="payment" id="payment-method" required>
+              <option value="">Choose a payment method</option>
+              <option value="GCash">GCash e-wallet</option>
+              <option value="GoTyme Bank">GoTyme Bank</option>
+              <option value="Maya">Maya e-wallet</option>
+              <option value="ShopeePay">ShopeePay</option>
+              <option value="GrabPay">GrabPay</option>
+              <option value="Other e-wallet">Other e-wallet</option>
+              <option value="Cash on Delivery">Cash on Delivery</option>
+            </select>
+          </label>
+          <div class="payment-hint full-width" id="payment-hint">Choose your preferred payment method. Online payments are shown as demo options only.</div>
+          <label class="full-width">Delivery address<textarea name="address" placeholder="House number, street, barangay, city" rows="3" required></textarea></label>
+          <label class="full-width">Order notes (optional)<textarea name="notes" placeholder="Any delivery instructions?" rows="2"></textarea></label>
+        </div>
+        <div class="checkout-bottom"><p>SKRTS demo checkout. No real payment will be charged.</p><button class="checkout-button" type="submit">Place sample order <span>↗</span></button></div>
+      </form>
+      <div class="order-success" id="order-success" role="status" hidden></div>
+    </section>
+
+    <section class="story-section" id="story">
+      <div class="story-mark">S<span>.</span></div>
+      <div><p class="eyebrow">A NOTE FROM SKRTS</p><h2>Less, but <em>better.</em></h2><p>We believe everyday objects should be useful, well considered, and full of character. SKRTS brings an old-fashioned point of view to modern shopping.</p></div>
+      <div class="story-seal">THOUGHTFULLY<br>SELECTED<br><span>✳</span></div>
+    </section>
+  </main>
+
+  <footer><a class="footer-brand" href="#">SKRTS.</a><span>© <span id="year"></span> SKRTS · Curated Goods</span><span>Student project demo · No real payments</span></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
